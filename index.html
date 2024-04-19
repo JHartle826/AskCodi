@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Access</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 15px;
+      border-radius: 5px;
+      background-color: #f8f8f8;
+    }
+    nav a:hover {
+      background-color: #e8e8e8;
+    }
+    .main-content {
+      padding: 20px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Recipe Access</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+  <div class="main-content">
+    <h2>Featured Recipes</h2>
+    <div class="recipe">
+      <img src="example-recipe-image.jpg" alt="Delicious Recipe">
+      <h3>Spaghetti Carbonara</h3>
+      <p>A classic Italian pasta dish made with eggs, cheese, pancetta, and black pepper.</p>
+      <button onclick="showDetails('spaghetti')">View Details</button>
+    </div>
+    <div class="recipe">
+      <img src="example-recipe-image.jpg" alt="Yummy Recipe">
+      <h3>Blueberry Pancakes</h3>
+      <p>Fluffy pancakes filled with juicy blueberries. Perfect for breakfast or brunch.</p>
+      <button onclick="showDetails('pancakes')">View Details</button>
+    </div>
+    <div id="recipeDetails" style="display: none;">
+      <h3 id="recipeTitle"></h3>
+      <p id="recipeDescription"></p>
+      <form>
+        <h4>Contact Us</h4>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <footer>
+    &copy; 2022 Recipe Access
+  </footer>
+  <script>
+    function showDetails(recipe) {
+      const title = document.getElementById('recipeTitle');
+      const description = document.getElementById('recipeDescription');
+      if (recipe === 'spaghetti') {
+        title.textContent = 'Spaghetti Carbonara';
+        description.textContent = 'A classic Italian pasta dish made with eggs, cheese, pancetta, and black pepper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+      } else if (recipe === 'pancakes') {
+        title.textContent = 'Blueberry Pancakes';
+        description.textContent = 'Fluffy pancakes filled with juicy blueberries. Perfect for breakfast or brunch. Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+      }
+      document.getElementById('recipeDetails').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
